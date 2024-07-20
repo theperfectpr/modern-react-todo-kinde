@@ -8,10 +8,16 @@ import { KindeProvider } from "@kinde-oss/kinde-auth-react";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <KindeProvider
-      clientId="67d769eda4fe4e1a9d78ca3ab2e3b87c"
+      clientId={JSON.parse(
+        JSON.stringify(import.meta.env.VITE_KINDE_CLIENT_ID)
+      )}
       domain="https://kbaruadev.kinde.com"
-      redirectUri="http://localhost:5173"
-      logoutUri="http://localhost:5173"
+      redirectUri={JSON.parse(
+        JSON.stringify(import.meta.env.VITE_KINDE_REDIRECT_URI)
+      )}
+      logoutUri={JSON.parse(
+        JSON.stringify(import.meta.env.VITE_KINDE_LOGOUT_URI)
+      )}
     >
       <TodosContextProvider>
         <App />
