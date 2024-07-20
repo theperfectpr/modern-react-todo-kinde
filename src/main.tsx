@@ -8,9 +8,11 @@ import { KindeProvider } from "@kinde-oss/kinde-auth-react";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <KindeProvider
-      clientId={JSON.parse(
-        JSON.stringify(import.meta.env.VITE_KINDE_CLIENT_ID)
-      )}
+      clientId={
+        process.env.NODE_ENV === "development"
+          ? JSON.parse(JSON.stringify(import.meta.env.VITE_KINDE_CLIENT_ID))
+          : process.env.KINDE_CLIENT_ID
+      }
       domain="https://kbaruadev.kinde.com"
       redirectUri={
         process.env.NODE_ENV === "development"
