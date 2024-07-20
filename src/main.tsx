@@ -17,12 +17,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       redirectUri={
         process.env.NODE_ENV === "development"
           ? JSON.parse(JSON.stringify(import.meta.env.VITE_KINDE_REDIRECT_URI))
-          : process.env.KINDE_REDIRECT_URI
+          : JSON.parse(JSON.stringify(process.env.KINDE_REDIRECT_URI))
       }
       logoutUri={
         process.env.NODE_ENV === "development"
           ? JSON.parse(JSON.stringify(import.meta.env.VITE_KINDE_LOGOUT_URI))
-          : process.env.KINDE_LOGOUT_URI
+          : JSON.parse(JSON.stringify(process.env.KINDE_LOGOUT_URI))
       }
       isDangerouslyUseLocalStorage={true}
     >
