@@ -3,7 +3,7 @@ import AddTodoForm from "./AddTodoForm";
 import Button from "./Button";
 
 export default function Sidebar() {
-  const { login, register, logout, isAuthenticated, user, isLoading } =
+  const { login, register, logout, isAuthenticated, isLoading } =
     useKindeAuth();
   const handleLogout = () => {
     logout();
@@ -14,12 +14,9 @@ export default function Sidebar() {
       <AddTodoForm />
       <div className="mt-auto space-y-2 mb-2">
         {isLoading ? null : isAuthenticated ? (
-          <>
-            <p>Welcome {user?.given_name}</p>
-            <Button onClick={handleLogout} buttonType="secondary">
-              Logout
-            </Button>
-          </>
+          <Button onClick={handleLogout} buttonType="secondary">
+            Logout
+          </Button>
         ) : (
           <>
             <Button onClick={login} buttonType="secondary">
