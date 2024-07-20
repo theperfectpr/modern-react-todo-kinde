@@ -11,18 +11,18 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       clientId={
         process.env.NODE_ENV === "development"
           ? JSON.parse(JSON.stringify(import.meta.env.VITE_KINDE_CLIENT_ID))
-          : process.env.KINDE_CLIENT_ID
+          : "67d769eda4fe4e1a9d78ca3ab2e3b87c"
       }
       domain="https://kbaruadev.kinde.com"
       redirectUri={
         process.env.NODE_ENV === "development"
           ? JSON.parse(JSON.stringify(import.meta.env.VITE_KINDE_REDIRECT_URI))
-          : JSON.parse(JSON.stringify(process.env.KINDE_REDIRECT_URI))
+          : "https://modern-react-todo-kinde.vercel.app"
       }
       logoutUri={
         process.env.NODE_ENV === "development"
           ? JSON.parse(JSON.stringify(import.meta.env.VITE_KINDE_LOGOUT_URI))
-          : JSON.parse(JSON.stringify(process.env.KINDE_LOGOUT_URI))
+          : "https://modern-react-todo-kinde.vercel.app"
       }
       isDangerouslyUseLocalStorage={true}
     >
