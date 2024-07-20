@@ -18,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       logoutUri={JSON.parse(
         JSON.stringify(import.meta.env.VITE_KINDE_LOGOUT_URI)
       )}
+      isDangerouslyUseLocalStorage={true}
     >
       <TodosContextProvider>
         <App />
